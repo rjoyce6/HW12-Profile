@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>In-Class Week9</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
+
+    <!-- fontawesome cdn -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Change these file paths to connect your css and js files -->
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+    <div class="box-main">
+      <!-- header -->
+      <!-- Get User data -->
+      <form action="index.html" method="post" id="profile-create">
+        <h1 id="header">Create User Profile
+        <br><i class="fa fa-camera-retro fa-lg"></i></h1>
+
+        <!-- USER NAME -->
+        <div class="float-label">
+          <input type="text" name="f-name" value="" id="userName" placeholder="Name">
+        </div>
+        <br>
+
+        <!-- PASSWORD -->
+        <div class="float-label">
+          <input type="text" name="" value="" placeholder="Password" id="userPassword">
+        </div>
+        <br>
+
+        <!-- EMAIL ADDRESS -->
+        <div class="float-label">
+          <input type="text" name="f-name" value="" id="userEmail" placeholder="email address">
+        </div>
+        <br>
+
+       <div class='row'>
+         <!-- GENDER -->
+         <div class="col-md-6 gender">
+           <div class="gender-title">
+             <label for="gender" class="title">Gender:</label>
+           </div>
+           <div class="radio">
+             <label class="radio-inline">
+               <input type="radio" name="inlineRadioOptions"  id="inlineRadio1" value="option1" class="option-input userGender" checked>
+               <span>Male</span>
+             </label>
+             <label class="radio-inline">
+               <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" class="option-input userGender">
+               <span>Female</span>
+             </label>
+           </div>
+         </div>
+
+         <!-- AGE -->
+         <div class="float-label col-md-4">
+           <input type="number" name="age" id="age" maxlength="2" placeholder="Age"/>
+         </div>
+       </div>
+
+        <br>
+        <button type="button" name="button" id="sendData">Register</button>
+        <!-- <p></p> -->
+
+
+        <!-- <p class="message"> Not registered? <a href="#">&nbsp;Create an account</a> </p> -->
+
+      </form>
+
+      <div id="results">
+
+      </div>
+
+        <!-- <div class="col-md-6">
+
+          <form action="index.html" method="post" id="oldList">
+            <h1 id="header">Sign In</h1>
+            <input type="text" name="" value="" placeholder="Username" id="oldName">
+            <br>
+            <input type="text" name="" value="" placeholder="Password" id="oldPwd">
+            <br>
+            <button type="button" name="button" id="sendData2">Login</button>
+          </form>
+        </div>
+      </div>-->
+
+      <!-- <p class="message">Already registered? <a href="#">&nbsp;Sign In</a> </p> -->
+    </div>
+
+
+
+    <!-- GET READY FOR SOME JAVASCRIPTING!!! -->
+        <!-- jQuery -->
+        <script
+          src="http://code.jquery.com/jquery-3.2.1.js"
+          integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+          crossorigin="anonymous"></script>
+
+        <!-- Including CSS to Html -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+        <!-- javascript -->
+        <script type="text/javascript" src="js/app.js"> </script>
+  </body>
+
+</html>
