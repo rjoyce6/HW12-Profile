@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>In-Class Week9</title>
+    <title>Week 12</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -22,10 +22,10 @@
 
   <body>
     <div class="box-main">
-      <!-- header -->
       <!-- Get User data -->
-      <form action="index.html" method="post" id="profile-create">
-        <h1 id="header">Create User Profile
+      <!-- =============================================================== -->
+      <form action="index.html" method="post" id="newProfile">
+        <h1 id="header">Create Your Profile
         <br><i class="fa fa-camera-retro fa-lg"></i></h1>
 
         <!-- USER NAME -->
@@ -71,33 +71,66 @@
        </div>
 
         <br>
-        <button type="button" name="button" id="sendData">Register</button>
-        <!-- <p></p> -->
+        <button type="button" name="button" id="sendData">Create</button>
+        <p></p>
 
 
-        <!-- <p class="message"> Not registered? <a href="#">&nbsp;Create an account</a> </p> -->
+        <p class="message"> Not registered? <button type="button" name="button" id="login">&nbsp;Create an account</button> </p>
+
+        <div id="results"></div>
 
       </form>
 
-      <div id="results">
+
+        <div id="oldProfile">
+          <!-- =============================================================== -->
+          <form action="index.html" method="post" id="oldList">
+            <h1>Login to Your Profile </h1>
+
+            <!-- USER NAME -->
+            <div class="float-label">
+              <input type="text" name="" value="" placeholder="Username" id="oldName">
+            </div>
+            <br>
+
+            <!-- PASSWORD -->
+            <div class="float-label">
+              <input type="text" name="" value="" placeholder="Password" id="oldPwd">
+            </div>
+            <br>
+
+            <button type="button" name="button" id="sendData2">Login</button>
+
+            <p></p>
+
+            <p class="message"> Already registered? <button type="button" name="button" id="create">&nbsp;Sign In</button> </p>
+
+          </form>
+        </div>
+
+        <!-- Display User Profile  -->
+        <!-- =============================================================== -->
+        <div id="updateProfile" class="row">
+          <div class="col-md-4">
+            <h1 id="updateName"></h1>
+          </div>
+          <div class="col-md-8">
+            <p id="updateEmail"></p>
+            <p id="updateGender"></p>
+          </div>
+        </div>
 
       </div>
 
-        <!-- <div class="col-md-6">
 
-          <form action="index.html" method="post" id="oldList">
-            <h1 id="header">Sign In</h1>
-            <input type="text" name="" value="" placeholder="Username" id="oldName">
-            <br>
-            <input type="text" name="" value="" placeholder="Password" id="oldPwd">
-            <br>
-            <button type="button" name="button" id="sendData2">Login</button>
-          </form>
-        </div>
-      </div>-->
 
-      <!-- <p class="message">Already registered? <a href="#">&nbsp;Sign In</a> </p> -->
-    </div>
+
+
+
+
+
+
+
 
 
 

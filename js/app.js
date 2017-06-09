@@ -1,4 +1,5 @@
-
+// hide profile form
+document.getElementById('oldProfile').style.display = "none";
 
 // ======================================================
 var count = 1;
@@ -68,16 +69,16 @@ function getUserData() {
 	};
 
   // ---  USER AGE  ---
-	// check if value is empty
-	if(userAge == undefined) {
+	// check if value is not a number
+	// if(isNaN(userAge)) {
 		// add a class of failure to results if no user color value
-		results.className = "failure";
+		// results.className = "failure";
 		// update the text content of results
-		results.textContent = "you forgot to type your age";
+		// results.textContent = "you forgot to type your age";
 
 		// stop function if no answer
-		return;
-	}
+	// 	return;
+	// }
 
 	// if everything passes add a class of success to results
 	results.className = "success";
@@ -90,8 +91,11 @@ function getUserData() {
     password : userPassword,
     email : userEmail,
 		gender : userGender,
-		age : userAge,
+		// age : userAge,
 	};
+
+  //create a list of registered users
+  users.push(userProfile)
 
 	// confirm existance of all user profile data
 	console.log(userProfile);
@@ -103,8 +107,58 @@ function getUserData() {
 };
 
 
-//add click function to element with id="sendData"
+function login() {
+  console.log('sign in');
+
+  // hide profile form
+  document.getElementById('newProfile').style.display = "none";
+
+  // display sign in form
+  document.getElementById('oldProfile').style.display = "block";
+
+};
+
+
+function create() {
+  console.log('create');
+
+  // display sign in form
+  document.getElementById('oldProfile').style.display = "none";
+
+  // hide profile form
+  document.getElementById('newProfile').style.display = "block";
+
+};
+
+
+
+// Add click function to element with id="sendData"
+//============================================================================
 document.getElementById('sendData').addEventListener('click', getUserData, false);
+
+document.getElementById('login').addEventListener('click', login, false);
+
+document.getElementById('create').addEventListener('click', create, false);
+
+
+
+// Display user profile
+// ===========================================================================
+function displayProfile(userProfile) {
+  // hide profile form
+  document.getElementById('newProfile').style.display = "none";
+
+  // select HTML elements by id
+  var userName = document.getElementById('updateName');
+
+  // update profile using the userProfile object
+  userName.innerText = userProfile.name;
+
+}
+
+
+
+
 
 // function reguisterUser (){
 //   var userName = document.getElementById('userName').value;
