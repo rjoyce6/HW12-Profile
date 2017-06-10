@@ -54,11 +54,11 @@
            </div>
            <div class="radio">
              <label class="radio-inline">
-               <input type="radio" name="inlineRadioOptions"  id="inlineRadio1" value="option1" class="option-input userGender" checked>
+               <input type="radio" name="inlineRadioOptions"  value="Male" class="option-input userGender" checked>
                <span>Male</span>
              </label>
              <label class="radio-inline">
-               <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" class="option-input userGender">
+               <input type="radio" name="inlineRadioOptions" value="Female" class="option-input userGender">
                <span>Female</span>
              </label>
            </div>
@@ -74,10 +74,9 @@
         <button type="button" name="button" id="sendData">Create</button>
         <p></p>
 
+        <!-- Sign in form for registered users -->
+        <p class="message"> Already registered? <button type="button" name="button" id="login">&nbsp;Sing In</button> </p>
 
-        <p class="message"> Not registered? <button type="button" name="button" id="login">&nbsp;Create an account</button> </p>
-
-        <div id="results"></div>
 
       </form>
 
@@ -100,10 +99,10 @@
             <br>
 
             <button type="button" name="button" id="sendData2">Login</button>
-
             <p></p>
 
-            <p class="message"> Already registered? <button type="button" name="button" id="create">&nbsp;Sign In</button> </p>
+            <!-- Create profile for unregistered users -->
+            <p class="message"> Not registered? <button type="button" name="button" id="create">&nbsp;Create an account</button> </p>
 
           </form>
         </div>
@@ -111,26 +110,22 @@
         <!-- Display User Profile  -->
         <!-- =============================================================== -->
         <div id="updateProfile" class="row">
+
+          <!-- Update Name -->
           <div class="col-md-4">
             <h1 id="updateName"></h1>
           </div>
+
+          <!-- Update Other information -->
           <div class="col-md-8">
             <p id="updateEmail"></p>
             <p id="updateGender"></p>
+            <br>
+            <button type="button" name="button" id="signOut">&nbsp;Sign out</button> </p>
+
           </div>
         </div>
-
       </div>
-
-
-
-
-
-
-
-
-
-
 
 
 

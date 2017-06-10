@@ -208,7 +208,7 @@ h1 {
 }
 
 /*change message*/
-#login, #create {
+#login, #create, #signOut {
   text-decoration: none;
   color: #FF7052;
   background: transparent;

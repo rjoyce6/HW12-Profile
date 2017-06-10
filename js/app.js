@@ -1,5 +1,7 @@
 // hide profile form
 document.getElementById('oldProfile').style.display = "none";
+document.getElementById('updateProfile').style.display = "none";
+
 
 // ======================================================
 var count = 1;
@@ -26,10 +28,8 @@ function getUserData() {
 	// ---  FIRST NAME  ---
   // check if the username input is empty
 	if(userName == "") {
-		// add a class of failure to results if user name value is empty
-		results.className = "failure";
-		// update the text content of results
-		results.textContent = "you forgot to type your name";
+		// send an alert if user name is empty
+		alert("you forgot to type your name");
 
 		// stop function if no answer
 		return;
@@ -38,10 +38,8 @@ function getUserData() {
   // ---  PASSWORD  ---
   // check if the username input is empty
 	if(userPassword == "") {
-		// add a class of failure to results if user Password is empty
-		results.className = "failure";
-		// update the text content of results
-		results.textContent = "you forgot to type your password";
+    // send an alert if user password is empty
+    alert("you forgot to type your password");
 
 		// stop function if no answer
 		return;
@@ -49,10 +47,8 @@ function getUserData() {
 
   // ---  EMAIL  ---
 	if (userEmail == "") {
-		// add a class of failure to results if no user email value
-		results.className = "failure";
-		// update the text content of results
-		results.textContent = "you forgot to add your email";
+    // send an alert if user email address is empty
+    alert("you forgot to add your email");
 
 		// stop function if no answer
 		return;
@@ -68,22 +64,11 @@ function getUserData() {
 		};
 	};
 
-  // ---  USER AGE  ---
-	// check if value is not a number
-	// if(isNaN(userAge)) {
-		// add a class of failure to results if no user color value
-		// results.className = "failure";
-		// update the text content of results
-		// results.textContent = "you forgot to type your age";
-
-		// stop function if no answer
-	// 	return;
-	// }
-
 	// if everything passes add a class of success to results
-	results.className = "success";
-	// update the text content of results
-	results.textContent = "Welcome, " + userName;
+
+
+
+
 
 	// create object for user profile data
 	var userProfile = {
@@ -91,7 +76,6 @@ function getUserData() {
     password : userPassword,
     email : userEmail,
 		gender : userGender,
-		// age : userAge,
 	};
 
   //create a list of registered users
@@ -106,93 +90,110 @@ function getUserData() {
 	}, 1000);
 };
 
-
+// Display login profile and hide the other forms
+// ===========================================================================
 function login() {
-  console.log('sign in');
+  //Delete existing content
+  document.getElementById('oldName').value = "";
+  document.getElementById('oldPwd').value = "";
 
   // hide profile form
   document.getElementById('newProfile').style.display = "none";
+  document.getElementById('updateProfile').style.display = "none";
+
 
   // display sign in form
   document.getElementById('oldProfile').style.display = "block";
-
 };
 
 
+// Display create profile and hide the other forms
+// ===========================================================================
 function create() {
-  console.log('create');
+  //Delete existing content
+  document.getElementById('userName').value = "";
+  document.getElementById('userPassword').value = "";
+  document.getElementById('userEmail').value = "";
 
-  // display sign in form
+  // hide sign in form
   document.getElementById('oldProfile').style.display = "none";
+  document.getElementById('updateProfile').style.display = "none";
 
-  // hide profile form
+  // display profile form
   document.getElementById('newProfile').style.display = "block";
-
 };
 
+// Sign in to display user profile
+// ===========================================================================
+function loginUser (){
+  // Delete previous content
+  var oldName = document.getElementById('oldName').value;
+  var oldPsd = document.getElementById('oldPwd').value;
 
+  console.log(users);
 
-// Add click function to element with id="sendData"
+  // Check prevous user list
+  for (var i = 0; i < users.length; i++) {
+    // If the user name and user password is not empty, do this
+    if ((oldName && oldPsd) != ""){
+      // If the a user name was found
+      if ((oldName === users[i].name) && (oldPsd === users[i].password) ) {
+        console.log(users.length);
+
+        // display profile
+        setTimeout(function() {
+
+          console.log('display: ' + users[i]);
+          // accessProfile(users[i]);
+          displayProfile(users[i]);
+        }, 1000);
+      } else {
+        return;
+      }
+    }
+
+  }
+}
+
+// Add click function to element with id="sendData", "login", and "create",
+//"signOut"
 //============================================================================
-document.getElementById('sendData').addEventListener('click', getUserData, false);
-
 document.getElementById('login').addEventListener('click', login, false);
-
 document.getElementById('create').addEventListener('click', create, false);
+document.getElementById('sendData').addEventListener('click', getUserData, false);
+document.getElementById('sendData2').addEventListener('click', loginUser, false);
+document.getElementById('signOut').addEventListener('click', create, false);
 
 
-
-// Display user profile
+// Display user profile after creating it
 // ===========================================================================
 function displayProfile(userProfile) {
   // hide profile form
   document.getElementById('newProfile').style.display = "none";
+  document.getElementById('oldProfile').style.display = "none";
+
+  // display profile form
+  document.getElementById('updateProfile').style.display = "block";
 
   // select HTML elements by id
-  var userName = document.getElementById('updateName');
+  var userName   = document.getElementById('updateName');
+  var userEmail  = document.getElementById('updateEmail');
+  var userGender = document.getElementById('updateGender');
 
   // update profile using the userProfile object
-  userName.innerText = userProfile.name;
-
+  userName.innerText   = userProfile.name;
+  userEmail.innerText  = 'Email  : ' + userProfile.email;
+  userGender.innerText = 'Gender : '+ userProfile.gender;
 }
 
 
+// Display user profile after signing in
+// ===========================================================================
+function accessProfile(userProfile) {
+  // hide profile form
+  document.getElementById('newProfile').style.display = "none";
+  document.getElementById('oldProfile').style.display = "none";
 
-
-
-// function reguisterUser (){
-//   var userName = document.getElementById('userName').value;
-//   var userPsd = document.getElementById('userPassword').value;
-//
-//   if ((userName && userPsd) != ""){
-//     //create list
-//     users.push({name: userName, pswd: userPsd})
-//     console.log(users);
-//
-//     //delete content after pushing the button
-//     document.getElementById('newName').value = "";
-//     document.getElementById('newPwd').value = "";
-//     return count++;
-//   }
-// return
-// }
-
-
-// document.getElementById('sendData2').onclick = function (){ loginUser()};
-//
-// function loginUser (){
-//   var oldName = document.getElementById('oldName').value;
-//   var oldPsd = document.getElementById('oldPwd').value;
-//
-//
-//   for (var i = 0; i < users.length; i++) {
-//
-//   if ((oldName && oldPsd) != ""){
-//       if ((oldName === users[i].name) && (oldPsd === users[i].pswd) ) {
-//         console.log( oldName + "," + oldPsd);
-//         alert("Welcome Back!")
-//         return
-//       }
-//    }
-//  }
-// }
+  // display profile form
+  document.getElementById('updateProfile').style.display = "block";
+}
