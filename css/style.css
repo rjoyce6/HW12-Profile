@@ -80,7 +80,7 @@ h1 {
 ========================================================*/
 
 /*Float Label main style*/
-.float-label input {
+.float-label input, .float-label select {
     -webkit-appearance: none;
     outline: none;
     border: none;
@@ -90,34 +90,34 @@ h1 {
     -moz-border-radius: 0;
     border-radius: 0;
     font-family: 'Lato', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.7);
     background: transparent;
     color: #757575;
-    padding: 10px 15px 10px 10px;
+    padding: 5px 15px 7px 10px;
 }
 
 .title {
   font-family: 'Lato', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   background: transparent;
   color: #757575;
   font-weight: normal;
   margin-left: 7px;
 }
 
-.gender {
+.gender, .birthday {
     text-align: left;
     padding-left: 16px;
     margin-top: -10px;
 }
 
-.gender div {
+.gender div, .birthday div {
   display: inline-block;
   padding-left: 0;
 }
 
-
+/*add style to radio options*/
 .option-input {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -174,26 +174,46 @@ h1 {
 .option-input::after {
   border-radius: 50%;
 }
-
 .radio-inline input[type=radio] {
   position: static;
   margin-left: 0;
   padding-left: 0;
-  vertical-align: initial;
 }
-
+.radio-inline {
+  vertical-align: baseline;
+}
 .radio-inline span {
   line-height: 4;
   font-size: 18px;
   padding-left: 4px;
 }
+
+ /*Style birthday select */
+.float-label select {
+  display: inline-block;
+  width: 25%;
+  margin-left: 20px;
+  font-size: 18px;
+  color: black;
+}
+.birthday .select {
+  width: 70%;
+}
+
+.float-label > select option:first-child {
+  color: #77cee2;
+}
+
+
+
 /*========================================================
           Button Section
 ========================================================*/
 /*changing button box style*/
 #sendData , #sendData2{
   width: 150px;
-  margin-top: 20px;
+  margin-top: 50px;
+  margin-bottom: 10px;
   text-transform: uppercase;
   outline: 0;
   border-style: none;
@@ -314,9 +334,6 @@ td p{
   text-align: left;
 }
 
-
-
 #signOut {
-  padding-top: 15px;
   float: right;
 }

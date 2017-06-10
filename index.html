@@ -27,8 +27,9 @@
       <!-- =============================================================== -->
       <form action="index.html" method="post" id="newProfile">
         <h1 id="header">Create Your Profile
-        <br><i class="fa fa-camera-retro fa-lg"></i></h1>
-
+          <!-- <br><i class="fa fa-camera-retro fa-lg"></i> -->
+        </h1>
+        <h1></h1>
         <!-- USER NAME -->
         <div class="float-label">
           <input type="text" name="f-name" value="" id="userName" placeholder="Name">
@@ -64,8 +65,31 @@
              </label>
            </div>
          </div>
-
        </div>
+
+
+       <!-- BIRTHDAY -->
+       <div class="row birthday">
+         <div class="gender-title">
+           <label for="birthday" class="title">Birthday:</label>
+         </div>
+         <div class="float-label select">
+             <select name="Month" id="month">
+               <option value="" class="userMonth dateColor">Month</option>
+             </select>
+
+             <select name="Day" id="day">
+               <option value="" class="userDay dateColor">Day</option>
+             </select>
+
+             <select name="Year" id="year">
+               <option value="" class="userYear dateColor">Year</option>
+               </optgroup>
+             </select>
+
+           </div>
+         </div>
+
 
         <button type="button" name="button" id="sendData">Create</button>
         <p></p>
@@ -81,7 +105,7 @@
           <!-- =============================================================== -->
           <form action="index.html" method="post" id="oldList">
             <h1>Login to Your Profile </h1>
-
+            <h1></h1>
             <!-- USER NAME -->
             <div class="float-label">
               <input type="text" name="" value="" placeholder="Username" id="oldName">
@@ -92,7 +116,6 @@
             <div class="float-label">
               <input type="text" name="" value="" placeholder="Password" id="oldPwd">
             </div>
-            <br>
 
             <button type="button" name="button" id="sendData2">Login</button>
             <p></p>
@@ -108,24 +131,31 @@
         <div id="updateProfile" class="row">
 
           <!-- Update Name -->
-          <div class="col-md-5 user-left">
-            <span><img src="img/girl.jpg" alt="user image" class="user-image"></span>
-            <h1 id="updateName">Samara</h1>
+          <div class="col-md-4 user-left">
+            <span><img src="img/girl.jpg" alt="user image" class="user-image" id="updateImage"></span>
+            <h1 id="updateName"></h1>
+            <p id="updateAge"></p>
           </div>
 
           <!-- Update Other information -->
-          <div class="col-md-7 user-right">
+          <div class="col-md-8 user-right">
             <h2>Profile <span>Info</span></h2>
             <div class="user-info">
               <table>
                 <tr>
-                    <td><p>email address: &nbsp;&nbsp;</p> </td>
-                    <td><p id="updateEmail">samara.april@coderjoyce.com</p></td>
+                    <td><p>email address : </p> </td>
+                    <td><p id="updateEmail"></p></td>
                 </tr>
                 <tr>
-                    <td><p>gender:&nbsp;&nbsp;</p></td>
-                    <td><p id="updateGender">Female</p></td>
-                  </tr>
+                    <td><p>gender :</p></td>
+                    <td><p id="updateGender"></p></td>
+                </tr>
+                <tr>
+                    <td><p>birthday: </p></td>
+                    <td><p id="updateBirth"></p></td>
+                </tr>
+
+
                 </table>
               </div>
             </div>
