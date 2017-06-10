@@ -5,7 +5,14 @@ document.getElementById('updateProfile').style.display = "none";
 
 // ======================================================
 var count = 1;
-var users = [];
+var users = [{
+  name : "rommy",
+  password : "joyce",
+  email : "rommy.joyce@gmail.com",
+  gender : "Female",
+}];
+
+var user = {};
 
 
 // function to get users data
@@ -134,21 +141,30 @@ function loginUser (){
 
   // Check prevous user list
   for (var i = 0; i < users.length; i++) {
+    //display users length
+    console.log('array \"users\" lenght: ' + users.length);
+
     // If the user name and user password is not empty, do this
     if ((oldName && oldPsd) != ""){
       // If the a user name was found
       if ((oldName === users[i].name) && (oldPsd === users[i].password) ) {
-        console.log(users.length);
+
+        console.log('user name: ' + users[i].name);
+
+        var user = users[i];
+
+
 
         // display profile
         setTimeout(function() {
+          console.log('index: ' + i);
 
-          console.log('display: ' + users[i]);
+          // display to console users array
+          console.log('users[i] : ');
+          console.log(user);
           // accessProfile(users[i]);
-          displayProfile(users[i]);
+          displayProfile(user);
         }, 1000);
-      } else {
-        return;
       }
     }
 
