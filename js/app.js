@@ -2,13 +2,19 @@
 document.getElementById('oldProfile').style.display = "none";
 document.getElementById('updateProfile').style.display = "none";
 
+// document.getElementById('updateProfile').style.display = "block";
+// document.getElementById('newProfile').style.display = "none";
+// document.getElementById('oldProfile').style.display = "none";
+
+
+
 
 // ======================================================
 var count = 1;
 var users = [{
-  name : "rommy",
-  password : "joyce",
-  email : "rommy.joyce@gmail.com",
+  name : "samara",
+  password : "april",
+  email : "samara.april@coderjoyce.com",
   gender : "Female",
 }];
 
@@ -198,8 +204,8 @@ function displayProfile(userProfile) {
 
   // update profile using the userProfile object
   userName.innerText   = userProfile.name;
-  userEmail.innerText  = 'Email  : ' + userProfile.email;
-  userGender.innerText = 'Gender : '+ userProfile.gender;
+  userEmail.innerText  = userProfile.email;
+  userGender.innerText = userProfile.gender;
 }
 
 

@@ -22,6 +22,7 @@
 
   <body>
     <div class="box-main">
+
       <!-- Get User data -->
       <!-- =============================================================== -->
       <form action="index.html" method="post" id="newProfile">
@@ -48,7 +49,7 @@
 
        <div class='row'>
          <!-- GENDER -->
-         <div class="col-md-6 gender">
+         <div class=" gender">
            <div class="gender-title">
              <label for="gender" class="title">Gender:</label>
            </div>
@@ -64,13 +65,8 @@
            </div>
          </div>
 
-         <!-- AGE -->
-         <div class="float-label col-md-4">
-           <input type="number" name="age" id="age" maxlength="2" placeholder="Age"/>
-         </div>
        </div>
 
-        <br>
         <button type="button" name="button" id="sendData">Create</button>
         <p></p>
 
@@ -112,14 +108,27 @@
         <div id="updateProfile" class="row">
 
           <!-- Update Name -->
-          <div class="col-md-4">
-            <h1 id="updateName"></h1>
+          <div class="col-md-5 user-left">
+            <span><img src="img/girl.jpg" alt="user image" class="user-image"></span>
+            <h1 id="updateName">Samara</h1>
           </div>
 
           <!-- Update Other information -->
-          <div class="col-md-8">
-            <p id="updateEmail"></p>
-            <p id="updateGender"></p>
+          <div class="col-md-7 user-right">
+            <h2>Profile <span>Info</span></h2>
+            <div class="user-info">
+              <table>
+                <tr>
+                    <td><p>email address: &nbsp;&nbsp;</p> </td>
+                    <td><p id="updateEmail">samara.april@coderjoyce.com</p></td>
+                </tr>
+                <tr>
+                    <td><p>gender:&nbsp;&nbsp;</p></td>
+                    <td><p id="updateGender">Female</p></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
             <br>
             <button type="button" name="button" id="signOut">&nbsp;Sign out</button> </p>
 
